@@ -1,0 +1,84 @@
+ _______________________
+|			|
+|	Minikube	|
+|_______________________|
+
+PS C:\Users\shyam> docker version
+Client:
+ Version:           28.3.2
+ API version:       1.51
+ Go version:        go1.24.5
+ Git commit:        578ccf6
+ Built:             Wed Jul  9 16:12:31 2025
+ OS/Arch:           windows/amd64
+ Context:           desktop-linux
+
+Server: Docker Desktop 4.44.3 (202357)
+ Engine:
+  Version:          28.3.2
+  API version:      1.51 (minimum version 1.24)
+  Go version:       go1.24.5
+  Git commit:       e77ff99
+  Built:            Wed Jul  9 16:13:55 2025
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          1.7.27
+  GitCommit:        05044ec0a9a75232cad458027ca83437aae3f4da
+ runc:
+  Version:          1.2.5
+  GitCommit:        v1.2.5-0-g59923ef
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        de40ad0
+--------------------------------------------------------------------------------------
+PS C:\Users\shyam> docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+-----------------------------------------------------------------------------------------
+PS C:\Users\shyam> kubectl version --client
+Client Version: v1.32.2
+Kustomize Version: v5.5.0
+-----------------------------------------------------------------------------------------
+PS C:\Users\shyam> minikube version
+minikube version: v1.36.0
+commit: f8f52f5de11fc6ad8244afac475e1d0f96841df1-dirty
+-----------------------------------------------------------------------------------------
+PS C:\Users\shyam> minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+------------------------------------------------------------------------------------------
+PS C:\Users\shyam> kubectl get nodes
+NAME       STATUS   ROLES           AGE   VERSION
+minikube   Ready    control-plane   26m   v1.33.1
+------------------------------------------------------------------------------------------
+PS C:\Users\shyam> choco --version
+2.5.0
+PS C:\Users\shyam> minikube dashboard
+* Verifying dashboard health ...
+* Launching proxy ...
+* Verifying proxy health ...
+* Opening http://127.0.0.1:55407/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
