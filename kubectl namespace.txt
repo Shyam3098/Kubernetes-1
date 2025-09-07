@@ -1,0 +1,40 @@
+S C:\Users\shyam> kubectl get nodes
+NAME       STATUS   ROLES           AGE   VERSION
+minikube   Ready    control-plane   51s   v1.33.1
+PS C:\Users\shyam> minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+PS C:\Users\shyam> kubectl get namespaces
+NAME              STATUS   AGE
+default           Active   2m15s
+kube-node-lease   Active   2m15s
+kube-public       Active   2m15s
+kube-system       Active   2m16s
+PS C:\Users\shyam> kubectl create namespace my-namespace
+namespace/my-namespace created
+
+S C:\Users\shyam> notepad C:\Users\shyam\namespace.yaml
+PS C:\Users\shyam> kubectl apply -f C:\Users\shyam\namespace.yaml
+error: no objects passed to apply
+PS C:\Users\shyam> kubectl apply -f C:\Users\shyam\namespace.yaml
+Warning: resource namespaces/my-namespace is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by kubectl apply. kubectl apply should only be used on resources created declaratively by either kubectl create --save-config or kubectl apply. The missing annotation will be patched automatically.
+namespace/my-namespace configured
+PS C:\Users\shyam> kubectl get namespaces
+NAME              STATUS   AGE
+default           Active   9m56s
+kube-node-lease   Active   9m56s
+kube-public       Active   9m56s
+kube-system       Active   9m57s
+my-namespace      Active   7m26s
+PS C:\Users\shyam> kubectl run nginx --image=nginx -n my-namespace
+pod/nginx created
+PS C:\Users\shyam> kubectl get pods -n my-namespace
+NAME    READY   STATUS              RESTARTS   AGE
+nginx   0/1     ContainerCreating   0          8s
+PS C:\Users\shyam> kubectl config set-context --current --namespace=my-namespace
+Context "minikube" modified.
