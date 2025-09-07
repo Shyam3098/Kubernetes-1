@@ -37,4 +37,7 @@ PS C:\Users\shyam> kubectl get pods -n my-namespace
 NAME    READY   STATUS              RESTARTS   AGE
 nginx   0/1     ContainerCreating   0          8s
 PS C:\Users\shyam> kubectl config set-context --current --namespace=my-namespace
+
 Context "minikube" modified.
+PS C:\Users\shyam> kubectl delete namespace my-namespace
+namespace "my-namespace" deleted
